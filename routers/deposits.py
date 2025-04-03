@@ -60,3 +60,20 @@ async def get_calc_deposit_from_month(payload: deposits.Deposits):
 
     except ValueError as e:
             raise HTTPException(status_code=400, detail=str(e))
+
+
+# Нужен метод, который принимает сумму Например 10 000 и высчитывает,
+# что выгоднее, положить эту сумму на вклад на 1 месяц и получу прибыль N
+# или купить облигации которые приносят доход N в месяц
+# Не забыть вычесть в обоих местах 13/15 % налога
+
+# Нужны конкретные облигации, по которым буду сравнивать
+# Например РЖД, СБЕР
+
+@router.post("/calc_bond")
+async def calc_bond(payload: deposits.BondResponse):
+    try:
+        # см deepseek
+        return JSONResponse(content={"data": 'payload-F' })
+    except ValueError as e:
+            raise HTTPException(status_code=400, detail=str(e))
